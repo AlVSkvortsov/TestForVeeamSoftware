@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TestForVeeamSoftware
+namespace TestForVeeamSoftware.DataObjects
 {
     internal sealed class InputParameters : IInputParameters
     {

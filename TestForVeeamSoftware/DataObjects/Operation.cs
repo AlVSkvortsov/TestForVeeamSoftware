@@ -1,8 +1,7 @@
-﻿namespace TestForVeeamSoftware
+﻿namespace TestForVeeamSoftware.DataObjects
 {
     internal enum Operation
     {
-        none,
         compress,
         decompress
     }

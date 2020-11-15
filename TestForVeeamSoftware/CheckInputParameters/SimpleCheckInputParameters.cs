@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using TestForVeeamSoftware.DataObjects;
 using TestForVeeamSoftware.ResultOutputManager;
 
 namespace TestForVeeamSoftware.CheckInputParameters

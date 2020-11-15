@@ -45,9 +45,15 @@
   <ItemGroup>
     <Compile Include="CheckInputParameters\SimpleCheckInputParameters.cs" />
     <Compile Include="CheckInputParameters\ICheckInputParameters.cs" />
-    <Compile Include="IInputParameters.cs" />
-    <Compile Include="InputParameters.cs" />
-    <Compile Include="Operation.cs" />
+    <Compile Include="DataObjects\IThreadBlock.cs" />
+    <Compile Include="DataObjects\ThreadBlock.cs" />
+    <Compile Include="FileProcessing\CompressProcessing.cs" />
+    <Compile Include="FileProcessing\DecompressProcessing.cs" />
+    <Compile Include="FileProcessing\FileProcessing.cs" />
+    <Compile Include="FileProcessing\IFileProcessing.cs" />
+    <Compile Include="DataObjects\IInputParameters.cs" />
+    <Compile Include="DataObjects\InputParameters.cs" />
+    <Compile Include="DataObjects\Operation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResultOutputManager\IResultOutputManager.cs" />
@@ -56,8 +62,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Processing\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

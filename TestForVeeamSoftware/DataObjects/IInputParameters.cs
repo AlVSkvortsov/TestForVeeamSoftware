@@ -1,4 +1,4 @@
-﻿namespace TestForVeeamSoftware
+﻿namespace TestForVeeamSoftware.DataObjects
 {
     internal interface IInputParameters
     {

@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TestForVeeamSoftware.CheckInputParameters;
+using TestForVeeamSoftware.DataObjects;
+using TestForVeeamSoftware.FileProcessing;
 using TestForVeeamSoftware.ResultOutputManager;
 
 namespace TestForVeeamSoftware
@@ -22,8 +20,25 @@ namespace TestForVeeamSoftware
                 if (checkInputParameters.CheckParameters())
                 {
                     IInputParameters inputParameters = new InputParameters(args);
-                    Compress(inputParameters.SourceFileName, inputParameters.ResultFileName);
-                    Decompress(inputParameters.ResultFileName, inputParameters.SourceFileName + "Test");
+
+                    IFileProcessing fileProcessing;
+
+                    switch (inputParameters.OperationName)
+                    {
+                        case Operation.compress:
+                            fileProcessing = new CompressProcessing(inputParameters);
+                            break;
+                        case Operation.decompress:
+                            fileProcessing = new DecompressProcessing(inputParameters);
+                            break;
+                        default:
+                            throw new Exception("Некорректное наименование операции.");
+                    };
+
+                    fileProcessing.Processing();
+
+                    //Compress(inputParameters.SourceFileName, inputParameters.ResultFileName);
+                    //Decompress(inputParameters.ResultFileName, Path.GetDirectoryName(inputParameters.SourceFileName) + @"\result.mpq");
                 }
 
                 resultOutput.RenderResult();
